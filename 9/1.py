@@ -1,13 +1,6 @@
 f = open("input", "r")
 
-def safe_list_get (l, idx, default):
-  try:
-    return l[idx]
-  except IndexError:
-    return default
-
 data = []
-
 
 counter = 0
 
@@ -21,24 +14,24 @@ for i, row in enumerate(data):
             if i > 0:
                 up = data[i-1][j]
             else:
-                up = None
+                up = 9
         except:
-            up = None
+            up = 9
         try:
             down = data[i+1][j]
         except:
-            down = None
+            down = 9
         try:
             if j > 0:
                 left = data[i][j-1]
             else:
-                left = None
+                left = 9
         except:
-            left = None
+            left = 9
         try:
             right = data[i][j+1]
         except:
-            right = None
+            right = 9
         
         if (up == None or item < up) and (down == None or item < down) and (left == None or item < left) and (right == None or item < right):
             print(f"Low level found: {i},{j}: {item}")

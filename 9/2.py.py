@@ -1,13 +1,6 @@
 f = open("input", "r")
 
-def safe_list_get (l, idx, default):
-  try:
-    return l[idx]
-  except IndexError:
-    return default
-
 data = []
-
 
 low_points = []
 basins = {}
